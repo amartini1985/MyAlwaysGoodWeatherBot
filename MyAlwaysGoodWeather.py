@@ -1,5 +1,5 @@
-import os
 import requests
+import os
 from telebot import TeleBot, types
 from dotenv import load_dotenv
 from pprint import pprint
