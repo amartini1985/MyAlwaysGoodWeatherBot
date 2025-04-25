@@ -35,7 +35,7 @@ def main():
     cur.execute(query_3)
     cur.execute(query_4, ('Moscow', 55.7522, 37.6156))
     con.commit()
-    con.close() 
+    con.close()
 
 
 if __name__ == '__main__':

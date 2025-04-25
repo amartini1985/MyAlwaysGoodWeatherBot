@@ -62,6 +62,11 @@ def get_chat_city(chat_id):
     cur = con.cursor()
     query = '''SELECT city FROM current_city WHERE chat=?;'''
     result = cur.execute(query, (chat_id,)).fetchone()
+    if not result:
+        query = '''INSERT INTO current_city(city, chat) VALUES (?, ?);'''
+        cur.execute(query, ('Moscow', chat_id))
+        con.commit()
+        result = ('Moscow',)
     con.close()
     return result
 
